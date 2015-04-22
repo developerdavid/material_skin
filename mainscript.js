@@ -59,4 +59,39 @@ $('.circle-svg-a a, .circle-svg-span span').on("click", function(e) {
     
     
     
+ $('.star_rating').each(function(){
+     
+    $(this).css('visibility', 'hidden');
+     
+   var stars = parseInt($(this).find('>div').text());
+   
+   $(this).find('>div').detach();
+   
+   $(this).attr('id', 'comment_rating');
+   
+
+     
+   for(var i = 0; i<stars; i++){
+       
+       $(this).append('<span class="comment_rating raty_star_on"> </span>');
+       
+   }  
+   var stars_off = 5 - stars;
+   
+   for(var j = 0; j<stars_off; j++){
+       
+       $(this).append('<span class="comment_rating raty_star_off"> </span>');
+       
+   }  
+   
+    $(this).css('visibility', 'visible');
+   
+ });  
+    
+    
+    
+    
+    
+    
+    
 })(jQuery);
